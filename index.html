@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js"></script>
+</head>
+<script>
+  function myFunction() {
+    var valueInVar = '';
+    valueInVar = document.getElementById("input").value;
+    var words = valueInVar.split(" ");
+    if(words.length>10){
+     alert('Please Give Bag of words less than 10')
+    }
+    for (var i = 0; i <= words.length - 1; i++) {
+      document.getElementById("item" + i.toString()).innerHTML = words[i];
+    }
+  }
+</script>
+<body onload="myFunction()">
+  <form>
+    <div class="form-group">
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">
+          <h2>INPUT</h2>
+        </label>
+        <textarea class="form-control" id="input" rows="3" onfocusout="textareaToVar()"></textarea>
+
+        <br>
+        <button onclick="myFunction()" type="button" class="btn btn-outline-success">
+          Submit </button>
+      </div>
+  </form>
+  <div class="wrapper">
+    <div class="item">
+      <span class="text"  id="item0"></span>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="item">
+      <span class="text"  id="item1"></span>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="item">
+      <span class="text"  id="item2"></span>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="item">
+      <span class="text"  id="item3"></span>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="item">
+      <span class="text"  id="item4"></span>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="item">
+      <span class="text"  id="item5"></span>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="item">
+      <span class="text"  id="item6"></span>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="item">
+      <span class="text"  id="item7"></span>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="item">
+      <span class="text"  id="item8"></span>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="item">
+      <span class="text"  id="item9"></span>
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+
+  <script>
+    const dragArea = document.querySelector(".wrapper");
+    new Sortable(dragArea, {
+      animation: 350
+    });
+  </script>
+
+</body>
+</html>
