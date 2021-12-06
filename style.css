@@ -23,14 +23,14 @@ body{
 .wrapper{
   background: #fff;
   padding: 25px;
-  max-width: 460px;
+  max-width: 100%;
   width: 100%;
   border-radius: 3px;
   box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
 }
 .wrapper .item{
   color: #fff;
-  display: flex;
+  display: inline-flex;
   margin-bottom: 8px;
   padding: 12px 17px;
   background: #304B5F;
