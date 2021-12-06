@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal - www.codingnepalweb.com -->
+
 <html lang="en">
 
 <head>
@@ -13,25 +13,37 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js"></script>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
   function myFunction() {
     var valueInVar = '';
     valueInVar = document.getElementById("input").value;
     var words = valueInVar.split(" ");
     var x = "";
-    for (i = 0; i <= words.length-1; i++) {
-      x=x+"<div " + " class=" + "\""+ "item" +"\"" + "> " + "<span " + " class=" + "\""+ "text" +"\"" + " id=" +  "\""+ "item" +"\"" + i.toString() + "> " + words[i] + "</span> " + "<i" + " class=" +  "\""+ "fas fa-bars"+"\"" +">"+ "</i> " + "</div> ";
+    for (i = 0; i <= words.length - 1; i++) {
+      x = x + "<div " + " class=" + "\"" + "item" + "\"" + "> " + "<span " + " class=" + "\"" + "text" + "\"" + " id=" + "\"" + "item" + i.toString() + "\"" + "> " + words[i] + "</span> " + "<i" + " class=" + "\"" + "fas fa-bars" + "\"" + ">" + "</i> " + "</div> ";
     }
     document.getElementById("demo").innerHTML = x;
+    var y = "";
+  }
+  function myFunction_1() {
+    var y = "";
+    var getDivs = $(".text");
+    getDivs.each(function (item, index) {
+
+      y += $(this).text().trim() + ' ';
+    })
+    $("#output").text(y);
   }
 </script>
 
-<body onload="myFunction()">
+<body>
   <form>
     <div class="form-group">
       <div class="form-group">
         <label for="exampleFormControlTextarea1">
           <h2>INPUT</h2>
+          <p>Give me Bag of Words as Input:</p>
         </label>
         <textarea class="form-control" id="input" rows="3" onfocusout="textareaToVar()"></textarea>
 
@@ -41,7 +53,7 @@
       </div>
   </form>
   <div class="wrapper" id="demo" onclick="myfuction()">
-  
+
     <!-- <div class="item">
       <span class="text"  id="item0"></span>
       <i class="fas fa-bars"></i>
@@ -82,6 +94,11 @@
       <span class="text"  id="item9"></span>
       <i class="fas fa-bars"></i>
     </div>  -->
+  </div>
+  <h2>OUTPUT</h2> <p>To see Your Output after Rearrangement Click on Submit</p>
+  <button onclick="myFunction_1()" type="button" class="btn btn-outline-success">
+    Submit </button>
+    <div id="output"></div>
   </div>
 
   <script>
